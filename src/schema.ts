@@ -7,8 +7,15 @@ import * as types from './types'
 export const schema = applyMiddleware(
   makeSchema({
     types,
-    plugins: [nexusPrisma({ experimentalCRUD: true })],
-    shouldGenerateArtifacts: true,
+    plugins: [
+      nexusPrisma({
+        experimentalCRUD: true,
+        shouldGenerateArtifacts: true,
+        outputs: {
+          typegen: __dirname + '/generated/typegen-nexus-plugin-prisma.d.ts',
+        },
+      }),
+    ],
     outputs: {
       schema: __dirname + '/generated/schema.graphql',
       typegen: __dirname + '/generated/nexus.ts',
