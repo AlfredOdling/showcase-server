@@ -6,8 +6,6 @@ const server = new ApolloServer({
   schema,
   context: createContext,
 })
-server.listen().then(async ({ url }) => {
-  console.log(`\
-🚀 Server ready at: ${url}
-  `)
-})
+
+const PORT = process.env.PORT || 3000
+server.listen(PORT, () => console.log(`\🚀 Server ready at port: ${PORT}`))
