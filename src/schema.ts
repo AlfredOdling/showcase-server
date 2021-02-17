@@ -8,6 +8,7 @@ export const schema = applyMiddleware(
   makeSchema({
     types,
     plugins: [nexusPrisma({ experimentalCRUD: true })],
+    shouldGenerateArtifacts: true,
     outputs: {
       schema: __dirname + '/generated/schema.graphql',
       typegen: __dirname + '/generated/nexus.ts',
