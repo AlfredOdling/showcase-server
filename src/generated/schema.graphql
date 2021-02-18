@@ -3,6 +3,7 @@
 
 
 type AuthPayload {
+  error: String
   token: String
   user: User
 }
