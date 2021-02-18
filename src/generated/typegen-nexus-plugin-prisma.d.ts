@@ -15,6 +15,7 @@ type CustomScalars = 'DateTime'
 // Prisma model type definitions
 interface PrismaModels {
   User: Prisma.User
+  Crypto: Prisma.Crypto
 }
 
 // Prisma input types metadata
@@ -24,8 +25,15 @@ interface NexusPrismaInputs {
       filtering: 'AND' | 'OR' | 'NOT' | 'id' | 'createdAt' | 'updatedAt' | 'email' | 'password'
       ordering: 'id' | 'createdAt' | 'updatedAt' | 'email' | 'password'
     }
+    cryptos: {
+      filtering: 'AND' | 'OR' | 'NOT' | 'id' | 'value'
+      ordering: 'id' | 'value'
+    }
   },
   User: {
+
+  }
+  Crypto: {
 
   }
 }
@@ -35,6 +43,8 @@ interface NexusPrismaOutputs {
   Query: {
     user: 'User'
     users: 'User'
+    crypto: 'Crypto'
+    cryptos: 'Crypto'
   },
   Mutation: {
     createOneUser: 'User'
@@ -43,6 +53,12 @@ interface NexusPrismaOutputs {
     deleteOneUser: 'User'
     deleteManyUser: 'AffectedRowsOutput'
     upsertOneUser: 'User'
+    createOneCrypto: 'Crypto'
+    updateOneCrypto: 'Crypto'
+    updateManyCrypto: 'AffectedRowsOutput'
+    deleteOneCrypto: 'Crypto'
+    deleteManyCrypto: 'AffectedRowsOutput'
+    upsertOneCrypto: 'Crypto'
   },
   User: {
     id: 'String'
@@ -51,11 +67,16 @@ interface NexusPrismaOutputs {
     email: 'String'
     password: 'String'
   }
+  Crypto: {
+    id: 'String'
+    value: 'String'
+  }
 }
 
 // Helper to gather all methods relative to a model
 interface NexusPrismaMethods {
   User: Typegen.NexusPrismaFields<'User'>
+  Crypto: Typegen.NexusPrismaFields<'Crypto'>
   Query: Typegen.NexusPrismaFields<'Query'>
   Mutation: Typegen.NexusPrismaFields<'Mutation'>
 }

@@ -58,6 +58,10 @@ export interface NexusGenObjects {
     token?: string | null; // String
     user?: NexusGenRootTypes['User'] | null; // User
   }
+  Crypto: { // root type
+    id: string; // String!
+    value: string; // String!
+  }
   Mutation: {};
   Query: {};
   User: { // root type
@@ -85,12 +89,17 @@ export interface NexusGenFieldTypes {
     token: string | null; // String
     user: NexusGenRootTypes['User'] | null; // User
   }
+  Crypto: { // field return type
+    id: string; // String!
+    value: string; // String!
+  }
   Mutation: { // field return type
     createUser: NexusGenRootTypes['AuthPayload'] | null; // AuthPayload
     deleteOneUser: NexusGenRootTypes['User'] | null; // User
     login: NexusGenRootTypes['AuthPayload'] | null; // AuthPayload
   }
   Query: { // field return type
+    cryptoListings: NexusGenRootTypes['Crypto'] | null; // Crypto
     me: NexusGenRootTypes['User'] | null; // User
     user: NexusGenRootTypes['User'] | null; // User
     users: NexusGenRootTypes['User'][]; // [User!]!
@@ -110,12 +119,17 @@ export interface NexusGenFieldTypeNames {
     token: 'String'
     user: 'User'
   }
+  Crypto: { // field return type name
+    id: 'String'
+    value: 'String'
+  }
   Mutation: { // field return type name
     createUser: 'AuthPayload'
     deleteOneUser: 'User'
     login: 'AuthPayload'
   }
   Query: { // field return type name
+    cryptoListings: 'Crypto'
     me: 'User'
     user: 'User'
     users: 'User'

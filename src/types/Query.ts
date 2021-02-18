@@ -17,5 +17,12 @@ export const Query = queryType({
         })
       },
     })
+
+    t.nullable.field('getCrypto', {
+      type: 'Crypto',
+      resolve: (parent, args, ctx) => {
+        return ctx.CryptoAPI.getCrypto()
+      },
+    })
   },
 })

@@ -5,6 +5,11 @@ import { schema } from './schema'
 const server = new ApolloServer({
   schema,
   context: createContext,
+  dataSources: () => {
+    return {
+      cryptoAPI: new CryptoAPI(),
+    }
+  },
 })
 
 const PORT = process.env.PORT || 4000
