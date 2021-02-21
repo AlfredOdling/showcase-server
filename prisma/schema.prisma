@@ -14,8 +14,3 @@ model User {
   email       String      @unique
   password    String
 }
-
-model Crypto {
-  id          String      @id @default(uuid())
-  value       String
-}

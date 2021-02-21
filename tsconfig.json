@@ -3,8 +3,14 @@
     "outDir": "dist",
     "rootDir": "src",
     "esModuleInterop": true,
-    "lib": ["esnext"],
+    "moduleResolution": "node",
+    "lib": [
+      "esnext"
+    ],
     "strict": true,
+    "target": "ES6"
   },
-  "include": ["src/**/*"]
+  "include": [
+    "src/**/*"
+  ]
 }

@@ -8,20 +8,13 @@ export const Query = queryType({
 
     t.nullable.field('me', {
       type: 'User',
-      resolve: (parent, args, ctx) => {
+      resolve: (_, __, ctx) => {
         const userId = getUserId(ctx)
         return ctx.prisma.user.findUnique({
           where: {
             id: userId,
           },
         })
-      },
-    })
-
-    t.nullable.field('getCrypto', {
-      type: 'Crypto',
-      resolve: (parent, args, ctx) => {
-        return ctx.CryptoAPI.getCrypto()
       },
     })
   },

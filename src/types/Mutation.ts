@@ -1,7 +1,7 @@
 const { compare, hash } = require('bcryptjs')
 const { sign } = require('jsonwebtoken')
-import { intArg, mutationType, nonNull, stringArg } from 'nexus'
-import { APP_SECRET, getUserId } from '../permissions'
+import { mutationType, nonNull, stringArg } from 'nexus'
+import { APP_SECRET } from '../permissions'
 
 export const Mutation = mutationType({
   definition(t) {
